@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+{% block content %}
+  <h2>Подтвердите удаление</h2>
+  <p>Вы действительно хотите удалить объект "{{ object }}"?</p>
+  <form method="post">
+    {% csrf_token %}
+    <button type="submit">Удалить</button>
+    <a href="{% url 'show_products' %}">Отмена</a>
+  </form>
+{% endblock %}
+
+</body>
+</html>
